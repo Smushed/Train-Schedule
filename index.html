@@ -16,21 +16,57 @@
     <header></header>
     <div class="container">
         <div class="row">
+
             <div class="col-md-12">
-                <div class="title">Schedule title</div>
-                <div class="schedule-body">schedule body</div>
+
+                <!-- Train Schedule-->
+                <div class="card">
+                    <div class="card-body">
+                        Train Schedule
+                        <table class="table table-sm table-hover train-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="title">new title</div>
-                <div class="new-train">new train form</div>
+                <div class="title">Add Train</div>
+                <div class="new-train">
+                    <div class="input-title">
+                        Train Name
+                        <input class="form-control train-name">
+                    </div>
+                    <div class="input-title">
+                        Destination
+                        <input class="form-control destination">
+                    </div>
+                    <div class="input-title">
+                        First Train Time (HH:MM - Military Time)
+                        <input class="form-control first-train">
+                    </div>
+                    <div class="input-title">
+                        Frequency (min)
+                        <input class="form-control frequency">
+                    </div>
+                </div>
                 <button class="btn btn-info submit">Submit</button>
             </div>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="assets/trainSchedule.js"></script>
 </body>
 
 </html>
