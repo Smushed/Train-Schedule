@@ -1,3 +1,5 @@
+var nextTrain;
+var minutesNextTrain;
 var config = {
   apiKey: "AIzaSyC0bFCK4F0yPrSCT4HOAaBjbW4zze4Nbos",
   authDomain: "train-schedule-smushed.firebaseapp.com",
@@ -12,15 +14,17 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 database.ref().on("child_added", function (snapshot) {
-  console.log(snapshot.val());
+  var firstTrain = snapshot.val().firstTrain;
+  var frequency = snapshot.val().frequency;
+
+  timeCalculator(firstTrain, frequency);
   $(".train-table tbody").append(
       `<tr>
           <td>${snapshot.val().trainName}</td>
           <td>${snapshot.val().destination}</td>
-          <td>${snapshot.val().firstTrain}</td>
-          <td>Months Worked</td>
-          <td>${snapshot.val().frequency}</td>
-          <td>Total Months Billed</td>
+          <td>${snapshot.val().frequency} minutes</td>
+          <td>${nextTrain}</td>
+          <td>${minutesNextTrain}</td>
       </tr>`
   );
 });
@@ -46,4 +50,18 @@ function emptyInput() {
   $(".destination").val("");
   $(".first-train").val("");
   $(".frequency").val("");
+};
+
+function timeCalculator(firstTrain, frequency){
+  var beginTrainConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
+  var trainFrequency = frequency;
+  var diffInTime = moment().diff(moment(beginTrainConverted), "minutes");
+
+  var timeRemainder = diffInTime % trainFrequency;
+  minutesNextTrain = diffInTime - timeRemainder;
+
+  minutesNextTrain = trainFrequency - timeRemainder;
+
+  nextTrain = moment().add(minutesNextTrain, "minutes");
+  nextTrain = moment(nextTrain).format("hh:mm")
 };
