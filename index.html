@@ -20,9 +20,11 @@
             <div class="col-md-12">
 
                 <!-- Train Schedule-->
-                <div class="card">
+                <div class="card schedule-container">
                     <div class="card-body">
-                        Train Schedule
+                        <div class="title">
+                            Train Schedule
+                        </div>
                         <table class="table table-sm table-hover train-table">
                             <thead>
                                 <tr>
@@ -42,26 +44,36 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="title">Add Train</div>
-                <div class="new-train">
-                    <div class="input-title">
-                        Train Name
-                        <input class="form-control train-name">
+                <div class="input-form rounded">
+                    <div class="title rounded">Add Train</div>
+                    <div class="new-train">
+                        <div>
+                            <div class="input-title">
+                                Train Name
+                            </div>
+                            <input class="form-control train-name">
+                        </div>
+                        <div>
+                            <div class="input-title">
+                                Destination
+                            </div>
+                            <input class="form-control destination">
+                        </div>
+                        <div>
+                            <div class="input-title">
+                                First Train Time (HH:MM - Military Time)
+                            </div>
+                            <input class="form-control first-train">
+                        </div>
+                        <div>
+                            <div class="input-title">
+                                Frequency (min)
+                            </div>
+                            <input class="form-control frequency">
+                        </div>
                     </div>
-                    <div class="input-title">
-                        Destination
-                        <input class="form-control destination">
-                    </div>
-                    <div class="input-title">
-                        First Train Time (HH:MM - Military Time)
-                        <input class="form-control first-train">
-                    </div>
-                    <div class="input-title">
-                        Frequency (min)
-                        <input class="form-control frequency">
-                    </div>
+                    <button class="btn btn-info submit">Submit</button>
                 </div>
-                <button class="btn btn-info submit">Submit</button>
             </div>
         </div>
     </div>

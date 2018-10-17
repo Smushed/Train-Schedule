@@ -1,0 +1,29 @@
+body {
+    background: url(TrackBackground.jpg);
+}
+.input-form {
+    background: rgba(196, 196, 196, 0.973);
+    font-weight: 700;
+    padding: 20px;
+    margin-top: 50px;
+}
+.submit {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.train-table {
+    padding: 0;
+}
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+.input-title{
+    margin-top: 13px;
+    margin-left: 10px;
+}
+.schedule-container {
+    background: rgba(196, 196, 196, 0.973);
+    margin-top: 100px;
+}
